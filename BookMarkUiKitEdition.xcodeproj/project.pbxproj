@@ -10,7 +10,6 @@
 		CE3B5DA327A0668000324F07 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B5DA227A0668000324F07 /* AppStorage.swift */; };
 		CEFACDE227A0059F004D0BF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFACDE127A0059F004D0BF1 /* AppDelegate.swift */; };
 		CEFACDE427A0059F004D0BF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFACDE327A0059F004D0BF1 /* SceneDelegate.swift */; };
-		CEFACDE627A0059F004D0BF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFACDE527A0059F004D0BF1 /* ViewController.swift */; };
 		CEFACDE927A0059F004D0BF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFACDE727A0059F004D0BF1 /* Main.storyboard */; };
 		CEFACDEB27A005A2004D0BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFACDEA27A005A2004D0BF1 /* Assets.xcassets */; };
 		CEFACDEE27A005A2004D0BF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFACDEC27A005A2004D0BF1 /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 		CEFACDDE27A0059F004D0BF1 /* BookMarkUiKitEdition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMarkUiKitEdition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFACDE127A0059F004D0BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFACDE327A0059F004D0BF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEFACDE527A0059F004D0BF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEFACDE827A0059F004D0BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEFACDEA27A005A2004D0BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEFACDED27A005A2004D0BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			children = (
 				CEFACDE127A0059F004D0BF1 /* AppDelegate.swift */,
 				CEFACDE327A0059F004D0BF1 /* SceneDelegate.swift */,
-				CEFACDE527A0059F004D0BF1 /* ViewController.swift */,
 				CEFACDF527A00665004D0BF1 /* MainViewController.swift */,
 				CEFACDF727A0068D004D0BF1 /* TableViewViewController.swift */,
 				CEFACDFE27A01F8D004D0BF1 /* LinkTableViewCell.swift */,
@@ -163,7 +160,6 @@
 			files = (
 				CEFACDFF27A01F8D004D0BF1 /* LinkTableViewCell.swift in Sources */,
 				CE3B5DA327A0668000324F07 /* AppStorage.swift in Sources */,
-				CEFACDE627A0059F004D0BF1 /* ViewController.swift in Sources */,
 				CEFACDE227A0059F004D0BF1 /* AppDelegate.swift in Sources */,
 				CEFACDE427A0059F004D0BF1 /* SceneDelegate.swift in Sources */,
 				CEFACDFD27A01C4A004D0BF1 /* LinkModel.swift in Sources */,

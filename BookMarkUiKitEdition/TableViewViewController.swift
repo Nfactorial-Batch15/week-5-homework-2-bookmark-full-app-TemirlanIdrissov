@@ -28,6 +28,23 @@ class TableViewViewController: UIViewController {
         return tableView
     }()
     
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Bookmark app"
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.textColor = .black
+        return label
+    }()
+    
+    private let titleLabelList: UILabel = {
+        let label = UILabel()
+        label.text = "List"
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.textColor = .black
+        return label
+    }()
+    
+    
     private let mainLabel: UILabel = {
        let label = UILabel()
         label.text = "Save your first bookmark"
@@ -81,6 +98,15 @@ class TableViewViewController: UIViewController {
             make.height.equalTo(58)
             make.bottom.equalToSuperview().offset(-50)
         }
+            view.addSubview(titleLabel)
+            titleLabel.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(56)
+                make.width.equalTo(130)
+                make.height.equalTo(22)
+            }
+        
+        
         
     }
     
@@ -111,7 +137,7 @@ class TableViewViewController: UIViewController {
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak alert] (_) in
             guard let title = alert?.textFields![0].text, !title.isEmpty else { return }
-            guard let link = alert?.textFields![0].text, !link.isEmpty else { return }
+            guard let link = alert?.textFields![1].text, !link.isEmpty else { return }
             self.addNewLinkToArray(title: title, link: link)
         }))
         
@@ -144,6 +170,6 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 100
 //    }
-    
+//
     
 }

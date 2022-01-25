@@ -10,6 +10,8 @@ import SnapKit
 
 class LinkTableViewCell: UITableViewCell {
     
+//    var linkWeb: LinkModel
+    
     private let lineView: UIView = {
         let view = UIView()
         return view
@@ -17,7 +19,11 @@ class LinkTableViewCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-
+        return label
+    }()
+    
+    private let linkLabel: UILabel = {
+        let label = UILabel()
         return label
     }()
     
@@ -39,8 +45,10 @@ class LinkTableViewCell: UITableViewCell {
     
     func configure(model: LinkModel) {
         self.titleLabel.text = model.title
+        self.linkLabel.text = model.link
     }
     
+
     
     func setUI() {
         self.addSubview(titleLabel)
@@ -54,14 +62,16 @@ class LinkTableViewCell: UITableViewCell {
         linkImageView.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-16)
             make.centerY.equalToSuperview()
-//            make.size.equalTo(80)
+            
         }
         
-        linkImageView.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(handleImageView)))
+        linkImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleImageView)))
     }
     
     @objc func handleImageView() {
-        print("DEBUG: Hello ")
+        guard let url = URL(string: "\(linkLabel.text!)") else { return }
+        UIApplication.shared.open(url)
+        print("DEBUG: \(self.linkLabel.text!)")
     }
-
+    
 }
