@@ -10,7 +10,17 @@ import SnapKit
 
 class TableViewViewController: UIViewController {
 
-    private var links: [LinkModel] = [LinkModel(title: "YouTube", link: "www.yootube.com")]
+    private var links: [LinkModel] = Storage.linkModels {
+        didSet {
+            if links.count > 0 {
+                checkLinks()
+            }
+            
+            if links.count == 0 {
+                checkLinks()
+            }
+        }
+    }
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -40,16 +50,16 @@ class TableViewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLinks()
         view.backgroundColor = .white
+        
+        addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
         
         tableView.register(LinkTableViewCell.self, forCellReuseIdentifier: "LinkTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        setUI()
-        addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
         
-    }
-    private func setUI() {
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
@@ -71,13 +81,25 @@ class TableViewViewController: UIViewController {
             make.height.equalTo(58)
             make.bottom.equalToSuperview().offset(-50)
         }
+        
+    }
+    
+    private func checkLinks() {
+        if links.isEmpty {
+            tableView.isHidden = true
+            mainLabel.isHidden = false
+        } else {
+            tableView.isHidden = false
+            mainLabel.isHidden = true
+        }
     }
     
     @objc private func handleAddButton() {
-        // 1.
-        let alert = UIAlertController(title: "Change", message: nil, preferredStyle: .alert)
         
-        // 2.
+        // 1. Create the alert controller.
+        let alert = UIAlertController(title: "Change", message: .none, preferredStyle: .alert)
+        
+        // 2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.placeholder = "Bookmark Title"
         }
@@ -86,14 +108,14 @@ class TableViewViewController: UIViewController {
             textField.placeholder = "Bookmark Link"
         }
         
-        // 3.
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak alert] (_) in
             guard let title = alert?.textFields![0].text, !title.isEmpty else { return }
             guard let link = alert?.textFields![0].text, !link.isEmpty else { return }
             self.addNewLinkToArray(title: title, link: link)
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
             print("dismissed")
         }))
         
@@ -103,6 +125,7 @@ class TableViewViewController: UIViewController {
     
     private func addNewLinkToArray(title: String, link: String) {
         self.links.append(LinkModel(title: title, link: link))
+        Storage.linkModels.append(LinkModel(title: title, link: link))
         self.tableView.reloadData()
     }
 }
@@ -113,9 +136,14 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LinkTableViewCell", for: : IndexPath) as? LinkTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LinkTableViewCell", for: indexPath) as? LinkTableViewCell else {return UITableViewCell()}
+        cell.configure(model: links[indexPath.row])
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
     
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LinkModel {
+struct LinkModel: Decodable, Encodable {
     var title: String
     var link: String
 }

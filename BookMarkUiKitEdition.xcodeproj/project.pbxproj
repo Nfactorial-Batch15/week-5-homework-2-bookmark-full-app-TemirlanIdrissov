@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3B5DA327A0668000324F07 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B5DA227A0668000324F07 /* AppStorage.swift */; };
 		CEFACDE227A0059F004D0BF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFACDE127A0059F004D0BF1 /* AppDelegate.swift */; };
 		CEFACDE427A0059F004D0BF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFACDE327A0059F004D0BF1 /* SceneDelegate.swift */; };
 		CEFACDE627A0059F004D0BF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFACDE527A0059F004D0BF1 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE3B5DA227A0668000324F07 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
 		CEFACDDE27A0059F004D0BF1 /* BookMarkUiKitEdition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMarkUiKitEdition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFACDE127A0059F004D0BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFACDE327A0059F004D0BF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,11 +74,12 @@
 				CEFACDF527A00665004D0BF1 /* MainViewController.swift */,
 				CEFACDF727A0068D004D0BF1 /* TableViewViewController.swift */,
 				CEFACDFE27A01F8D004D0BF1 /* LinkTableViewCell.swift */,
+				CE3B5DA227A0668000324F07 /* AppStorage.swift */,
+				CEFACDFC27A01C4A004D0BF1 /* LinkModel.swift */,
 				CEFACDE727A0059F004D0BF1 /* Main.storyboard */,
 				CEFACDEA27A005A2004D0BF1 /* Assets.xcassets */,
 				CEFACDEC27A005A2004D0BF1 /* LaunchScreen.storyboard */,
 				CEFACDEF27A005A2004D0BF1 /* Info.plist */,
-				CEFACDFC27A01C4A004D0BF1 /* LinkModel.swift */,
 			);
 			path = BookMarkUiKitEdition;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFACDFF27A01F8D004D0BF1 /* LinkTableViewCell.swift in Sources */,
+				CE3B5DA327A0668000324F07 /* AppStorage.swift in Sources */,
 				CEFACDE627A0059F004D0BF1 /* ViewController.swift in Sources */,
 				CEFACDE227A0059F004D0BF1 /* AppDelegate.swift in Sources */,
 				CEFACDE427A0059F004D0BF1 /* SceneDelegate.swift in Sources */,

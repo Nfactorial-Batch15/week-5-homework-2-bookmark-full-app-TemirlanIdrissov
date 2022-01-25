@@ -44,6 +44,7 @@ class MainViewController: UIViewController {
     
     @objc private func clickStartButton() {
         let vc = TableViewViewController()
+        Storage.showOnboarding = false
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.present(vc, animated: true, completion: nil)
         print("CLICKED")
